@@ -1,0 +1,210 @@
+/* 1. VARIÁVEIS DA PALETA AMADEIRADA & REGRAS GERAIS */
+:root {
+    --bg-principal: #FDFBF7;    /* Areia claro (Fundo do site) */
+    --bg-card: #F4EFE6;         /* Creme linho (Fundo dos cards/menu) */
+    --cor-texto: #2C221E;       /* Chocolate Profundo (Texto principal) */
+    --cor-mutada: #60524E;      /* Castanho Suave (Parágrafos) */
+    --cor-primaria: #8B5A2B;    /* Bronze Amadeirado (Botões e Links ativos) */
+    --cor-primaria-hover: #6E451F; /* Amadeirado Escuro (Efeitos de passar o rato) */
+    --cor-borda: #D7CDBD;       /* Argila Clara (Linhas e Bordas) */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-principal);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+/* 2. MENU DE NAVEGAÇÃO */
+#menu {
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--cor-borda);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--cor-primaria);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--cor-texto);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--cor-primaria);
+}
+
+/* 3. SECÇÃO DE PRODUTOS (Alinhamento Lado a Lado) */
+#Produtos {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--cor-borda);
+    border-radius: 12px;
+    width: 300px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(44, 34, 30, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(44, 34, 30, 0.08);
+}
+
+.card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
+}
+
+.card-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.card-body h2 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.card-body p {
+    font-weight: bold;
+    color: var(--cor-primaria);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+/* Botões Globais (Produtos e Contacto) */
+button[type="submit"] {
+    background-color: var(--cor-primaria);
+    color: var(--bg-principal);
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--cor-primaria-hover);
+}
+
+/* 4. SECÇÃO QUEM SOMOS */
+#Sobre {
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#Sobre h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#Sobre .card {
+    width: 100%;
+    padding: 30px;
+    background-color: var(--bg-card);
+    text-align: left;
+    margin-top: 20px;
+}
+
+#Sobre .card h3 {
+    color: var(--cor-primaria);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+#Sobre .card p {
+    color: var(--cor-mutada);
+    margin-bottom: 12px;
+}
+
+/* 5. SECÇÃO DE CONTACTO */
+#Contato {
+    max-width: 500px;
+    margin: 60px auto 100px auto;
+    padding: 40px 30px;
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    border: 1px solid var(--cor-borda);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#Contato .campo, #Contato div {
+    display: flex;
+    flex-direction: column;
+}
+
+#Contato input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    background-color: var(--bg-principal);
+    border: 1px solid var(--cor-borda);
+    border-radius: 6px;
+    color: var(--cor-texto);
+    transition: border-color 0.3s ease;
+}
+
+#Contato input:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+}
+
+#Contato button[type="submit"] {
+    padding: 14px;
+    margin-top: 10px;
+}
